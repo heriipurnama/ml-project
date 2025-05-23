@@ -13,6 +13,6 @@ model = Sequential([
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-# Simulasi training tanpa data (untuk demo saja, tanpa fit)
+# Simulasi training tanpa data sebenarnya
 model.save("model.h5")
 print("Model saved as model.h5")
