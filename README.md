@@ -134,4 +134,4 @@ Jika ada pertanyaan atau kendala, silakan tanyakan!
 
 ---
 
-**Created by Heri Ipurnama**
+**Created by heriipurnama**
