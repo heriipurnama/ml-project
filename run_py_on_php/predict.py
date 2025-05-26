@@ -11,8 +11,14 @@ def main():
     img_path = sys.argv[1]
 
     # Load model
-    model = load_model('model.h5')
-
+    # model = load_model('model.h5')
+    model = load_model('../model.h5')
+    if model is None:
+        print("Failed to load model", file=sys.stderr)
+        sys.exit(1)
+    if not img_path:
+        print("Image path is empty", file=sys.stderr)
+        sys.exit(1)
     # Load dan preprocess gambar sesuai input model (64x64)
     img = image.load_img(img_path, target_size=(64, 64))
     x = image.img_to_array(img)
