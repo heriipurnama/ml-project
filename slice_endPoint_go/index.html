@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload dan Prediksi Kucing atau Anjing</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #result { font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <h2>Upload Gambar Kucing atau Anjing</h2>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="image" id="imageInput" accept="image/*" required />
+    <button type="submit">Prediksi</button>
+  </form>
+
+  <h3>Hasil Prediksi:</h3>
+  <p id="result">Belum ada hasil.</p>
+
+  <script>
+    const uploadForm = document.getElementById('uploadForm');
+    const resultDisplay = document.getElementById('result');
+
+    uploadForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const formData = new FormData();
+      const imageFile = document.getElementById('imageInput').files[0];
+      if (!imageFile) return;
+
+      formData.append('image', imageFile);
+
+      try {
+        const response = await fetch('http://localhost:3000/upload', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+        resultDisplay.textContent = data.result || 'Prediksi gagal';
+        resultDisplay.style.color = 'green';
+      } catch (error) {
+        resultDisplay.textContent = 'Terjadi kesalahan saat menghubungi server.';
+        resultDisplay.style.color = 'red';
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
