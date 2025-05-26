@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "8981fa88-868f-4301-ad0f-7bd7f08f8478",
+		"name": "ml-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1906010"
+	},
+	"item": [
+		{
+			"name": "predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "postman-cloud:///1f03a037-704e-4dd0-b93f-f0bb9741e352"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/predict.php",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"predict.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict upload fetch php",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "postman-cloud:///1f03a02d-ca2f-4ca0-ad7e-b6c2ce485095"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/upload_fetch_python.php",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"upload_fetch_python.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict upload fetch js",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "postman-cloud:///1f03a02d-ca2f-4ca0-ad7e-b6c2ce485095"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/upload",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
